@@ -21,8 +21,12 @@ while (true)
     Console.Title = "Minimum Class Rooms";
     Console.CursorVisible = false;
     Console.ForegroundColor = ConsoleColor.Cyan;
-    Console.Write("  \"Please type in your class periods and double press enter when done\"");
-    Console.ReadKey(); // Jump to receiving inputs
+    Console.Write("  \"Please type in your class periods and double press enter when done \"");
+    if (Console.ReadKey().Key != ConsoleKey.Enter) // Jump to receiving inputs
+    {
+        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+        Console.Write("  ");
+    }
     Console.Write("\n");
 
     Console.CursorVisible = true;
@@ -90,8 +94,15 @@ while (true)
             rooms = counter + 0.2;
     } // Evaluate the maximum used time of the day
 
+    rooms = Convert.ToInt32(rooms);
     Console.ForegroundColor = ConsoleColor.Blue;
-    Console.Write($"\n  --> a minimum number of {Convert.ToInt32(rooms)} rooms are needed");
+    if (rooms == 0)
+        Console.Write("\n  --> no room is needed");
+    else
+    {
+        Console.Write($"\n  --> a minimum number of {rooms}");
+        Console.Write((rooms > 1) ? " rooms are needed" : " room is needed");
+    }
 
 what_to_do:
     Console.ForegroundColor = ConsoleColor.Green;
