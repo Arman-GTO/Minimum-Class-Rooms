@@ -2,10 +2,15 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net7.0-android</TargetFramework>
     <RootNamespace>Minimum_Rooms</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>icons8-classroom-50.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icons8-classroom-50.ico" />
+  </ItemGroup>
 
 </Project>
