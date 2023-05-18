@@ -1,4 +1,4 @@
-﻿namespace Minimum_Rooms
+﻿namespace Minimum_Rooms.Classes
 {
     internal class ClassPeriod
     {
