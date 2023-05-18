@@ -88,7 +88,7 @@ while (true)
     {
         counter = 0;
         foreach (var x in my_Classes)
-            if (i >= x.start && i < x.end)
+            if (i >= x.Start && i < x.End)
                 counter++;
         if (counter > rooms)
             rooms = counter + 0.2;

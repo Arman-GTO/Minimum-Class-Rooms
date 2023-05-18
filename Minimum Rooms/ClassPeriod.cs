@@ -4,10 +4,10 @@
     {
         public ClassPeriod(int start, int end)
         {
-            this.start = start;
-            this.end = end;
+            Start = start;
+            End = end;
         }
-        public int start { get; }
-        public int end { get; }
+        public int Start { get; }
+        public int End { get; }
     }
 }
