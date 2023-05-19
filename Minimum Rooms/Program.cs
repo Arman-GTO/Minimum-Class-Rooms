@@ -119,22 +119,21 @@ namespace Minimum_Rooms
 
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write("\n      (Enter --> chart)");
-                bool stop = false;
-                while (true)
+
+            Get_Key:
+                switch (Console.ReadKey(true).Key)
                 {
-                    switch (Console.ReadKey(true).Key)
-                    {
-                        case ConsoleKey.Enter:
-                            var chart = new ChartWindow(hourRooms);
-                            Application.Run(chart);
-                            stop = true;
-                            break;
-                    }
-                    if (stop) break;
+                    case ConsoleKey.Enter:
+                        var chart = new ChartWindow(hourRooms);
+                        Application.Run(chart);
+                        break;
+                    default: goto Get_Key;
                 } // Show the chart for rooms used in every hour
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.Write(new string(' ', 23));
 
             what_to_do:
-                Console.ForegroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write("\n\n  R: restart   |   ESC: exit\n\n");
                 bool isRestart = false;
                 while (true)
